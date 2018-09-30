@@ -2,6 +2,14 @@
 {% block header_account %}
   <header class="account-masthead">
     <div class="container">
+        <nav class='navbar'>
+                <ul class='nav'>
+                    <li><a href='http://meetup.com/betanyc' target="meetup" style="color:#999999; text-decoration: none; text-shadow: none; padding: 6px 15px 0px; ">Events</a></li>
+                    <li><a href='https://talk.beta.nyc' target="talk" style="color:#999999; text-decoration: none; text-shadow: none; padding: 6px 15px 0px;">Discussion Groups</a></li>
+                    <!--<li><a href='http://projects.beta.nyc' target="project" style="color:#999999; text-decoration: none; text-shadow: none; padding: 6px 15px 0px;">Projects</a></li>-->
+                    <li><a style="color:#fff; text-decoration: none; text-shadow: none; padding: 6px 15px 0px;">Community Data</a></li>
+                </ul>
+    </nav>
       {% block header_account_container_content %}
         {% if c.userobj %}
           <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
