@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Easy example | CartoDB.js</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
+    <style>
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css" />
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- include cartodb.js library -->
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>
+
+    <script>
+      cartodb_account = 'pediacities'
+      api_key = "c6d1d8006cfa8e22f9fe8d45c7f98d56acd459a1";
+      function main() {
+      	/*
+      	$.ajax({
+      		type: "GET",
+			contentType: "application/json; charset=utf-8",
+			url: "https://" + cartodb_account +".cartodb.com/api/v2/viz/dc857a7f-21f9-4754-be1b-a6f421310fcf/viz.json",
+			async:false,
+			success: function (data) {
+				console.log(data)
+			},
+			error: function (error) {
+				console.log(error);
+			}
+		});
+      	*/
+       /*
+      	$.ajax({
+      		type: "GET",
+			contentType: "application/json; charset=utf-8",
+			url: "https://" + cartodb_account +".cartodb.com/api/v1/imports/b4ccaef5-8dac-449e-b91f-52efaffd820e?api_key" + api_key,
+			async:false,
+			success: function (data) {
+				console.log(data)
+			},
+			error: function (error) {
+				console.log(error);
+			}
+		});
+      	*/
+      	
+        cartodb.createVis('map', 'http://pediacities.cartodb.com/api/v2/viz/dc857a7f-21f9-4754-be1b-a6f421310fcf/viz.json')
+        .done(function(vis, layers) {
+        })
+        .error(function(err) {
+          console.log(err);
+        });
+      }
+      
+      window.onload = main;
+    </script>
+  </body>
+</html>
